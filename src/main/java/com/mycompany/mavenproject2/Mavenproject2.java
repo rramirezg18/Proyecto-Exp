@@ -20,18 +20,18 @@ public class Mavenproject2 {
         ArbolExpresion arbol = new ArbolExpresion();
         int salir = 0;
         while(salir !=1) {
-        	Menu();
+            Menu();
             opcion = entrada.nextInt();
             switch (opcion) {
                 case 1:
                     //aca solicitara la expresion
-                    
+
                     //ArbolExpresion arbol = new ArbolExpresion(); // Crea una instancia de la clase ArbolExpresion.
                     entrada.nextLine();
                     System.out.println("Ingrese una expresion");
                     expresion =  entrada.nextLine();//"5*6-4+8*3^(4-2)*√3"; // Define una expresión aritmética.
-        
-        // Verifica si la expresión contiene variables
+
+                    // Verifica si la expresión contiene variables
                     if (contieneVariables(expresion)) {
                         System.out.println("La expresion contiene variables. Por favor, ingrese valores para las variables:");
                         for (char variable : obtenerVariables(expresion)) {
@@ -43,14 +43,14 @@ public class Mavenproject2 {
                     }
 
 
-                      break;
+                    break;
                 case 2:
                     //aca solo generara el arbol grafico
                     arbol.construirArbol(expresion); // Construye el árbol de expresión a partir de la expresión dada.
                     ArbolGraficos.mostrarArbolExpresion(arbol); // Llama al método para mostrar el árbol gráfico
 
-                    
-                      break;
+
+                    break;
                 case 3:
                     arbol.construirArbol(expresion); // Construye el árbol de expresión a partir de la expresión dada.
                     System.out.println("La expresion con valores constantes es: " + expresion);
@@ -67,15 +67,15 @@ public class Mavenproject2 {
                     arbol.imprimirPosorden(); // Imprime el recorrido posorden del árbol.
                     System.out.println();
                     //aca muestra los recorridos
-                      break;
+                    break;
                 case 4:
                     salir = 1;
-            }       
             }
+        }
     }
-    
+
     public static void Menu() {
-    	System.out.println("\n\t MENU\n");
+        System.out.println("\n\t MENU\n");
         System.out.println("1.\t Ingresar expresión matemática");
         System.out.println("2.\t Generar árbol de expresión");
 
@@ -84,8 +84,8 @@ public class Mavenproject2 {
         System.out.println("4.\t Salir");
         System.out.println("\nSeleccione una opción: ");
     }
-    
-    
+
+
     private static boolean contieneVariables(String expresion) {
         for (char c : expresion.toCharArray()) {
             if (Character.isLetter(c)) {
@@ -101,6 +101,4 @@ public class Mavenproject2 {
         return variables.toCharArray();
     }
 
-    }
-    
-
+}

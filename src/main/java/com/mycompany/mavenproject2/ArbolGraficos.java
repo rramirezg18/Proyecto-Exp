@@ -3,10 +3,12 @@ package com.mycompany.mavenproject2;
 import java.awt.*;
 import javax.swing.*;
 
+
+
 public class ArbolGraficos extends JPanel {
     private static final int ANCHO_NODO = 40;
     private static final int ALTO_NODO = 40;
-    private static final int DISTANCIA_HORIZONTAL = 1600;
+    private static final int DISTANCIA_HORIZONTAL = 200;
     private static final int DISTANCIA_VERTICAL = 80;
 
     public Nodo raiz;
@@ -32,7 +34,7 @@ public class ArbolGraficos extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (raiz != null) {
-            dibujarNodo(g, getWidth() / 2, 120, raiz, getWidth()/4 );
+            dibujarNodo(g, getWidth() / 2, 140, raiz, DISTANCIA_HORIZONTAL);
         }
     }
 
@@ -41,18 +43,17 @@ public class ArbolGraficos extends JPanel {
         g.drawOval(x, y, ANCHO_NODO, ALTO_NODO);
         g.drawString(nodo.getValor(), x + 12, y + 24);// numeros circulo
 
-
         if (nodo.getHijoIzquierdo() != null) {
-
-            int nuevoEspacio = espacio / 2;
-            g.drawLine(x + ANCHO_NODO / 2, y + ALTO_NODO, x - espacio / 2 + ANCHO_NODO / 2, y + DISTANCIA_VERTICAL);
+            int nuevoEspacio = DISTANCIA_HORIZONTAL-25;
+            g.drawLine(x + ANCHO_NODO /2, y + ALTO_NODO, x - espacio / 2 + ANCHO_NODO / 2, y + DISTANCIA_VERTICAL);
             dibujarNodo(g, x - espacio / 2, y + DISTANCIA_VERTICAL, nodo.getHijoIzquierdo(), nuevoEspacio);
         }
 
         if (nodo.getHijoDerecho() != null) {
-            int nuevoEspacio = espacio / 2;
+            int nuevoEspacio = DISTANCIA_HORIZONTAL-80;
             g.drawLine(x + ANCHO_NODO / 2, y + ALTO_NODO, x + espacio / 2 + ANCHO_NODO / 2, y + DISTANCIA_VERTICAL);
             dibujarNodo(g, x + espacio / 2, y + DISTANCIA_VERTICAL, nodo.getHijoDerecho(), nuevoEspacio);
         }
     }
 }
+
