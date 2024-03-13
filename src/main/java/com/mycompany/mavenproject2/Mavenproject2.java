@@ -10,6 +10,9 @@ package com.mycompany.mavenproject2;
  */
 import java.util.*;
 
+//Prueba prueba
+
+
 public class Mavenproject2 {
 
     public static void main(String[] args) {
@@ -46,8 +49,7 @@ public class Mavenproject2 {
                       break;
                 case 2:
                     //aca solo generara el arbol grafico
-                    arbol.construirArbol(expresion); // Construye el árbol de expresión a partir de la expresión dada.
-                    arbol.mostrarArbolEnVentana(); // Muestra el árbol en una ventana emergente.
+                    
 
                     
                       break;
