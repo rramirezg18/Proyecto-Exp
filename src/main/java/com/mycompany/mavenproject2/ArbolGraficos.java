@@ -32,18 +32,20 @@ public class ArbolGraficos extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (raiz != null) {
-            dibujarNodo(g, getWidth() / 2, 140, raiz, getWidth() / 3);
+            dibujarNodo(g, getWidth() / 2, 120, raiz, getWidth()/4 );
         }
     }
 
     private void dibujarNodo(Graphics g, int x, int y, Nodo nodo, int espacio) {
         g.setColor(Color.BLACK);
         g.drawOval(x, y, ANCHO_NODO, ALTO_NODO);
-        g.drawString(nodo.getValor(), x + 12, y + 3);// numeros circulo
+        g.drawString(nodo.getValor(), x + 12, y + 24);// numeros circulo
+
 
         if (nodo.getHijoIzquierdo() != null) {
-            int nuevoEspacio = espacio / 3;
-            g.drawLine(x + ANCHO_NODO / 3, y + ALTO_NODO, x - espacio / 2 + ANCHO_NODO / 2, y + DISTANCIA_VERTICAL);
+
+            int nuevoEspacio = espacio / 2;
+            g.drawLine(x + ANCHO_NODO / 2, y + ALTO_NODO, x - espacio / 2 + ANCHO_NODO / 2, y + DISTANCIA_VERTICAL);
             dibujarNodo(g, x - espacio / 2, y + DISTANCIA_VERTICAL, nodo.getHijoIzquierdo(), nuevoEspacio);
         }
 
@@ -54,4 +56,3 @@ public class ArbolGraficos extends JPanel {
         }
     }
 }
-

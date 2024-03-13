@@ -41,8 +41,8 @@ public class Mavenproject2 {
                         }
                         System.out.println("La expresion con valores constantes es: " + expresion);
                     }
-                    
-                    
+
+
                       break;
                 case 2:
                     //aca solo generara el arbol grafico
