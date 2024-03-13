@@ -9,7 +9,13 @@ package com.mycompany.mavenproject2;
  * @author ianto
  */
 import java.util.*;
-import javax.swing.*;
+
+
+//Prueba prueba
+//Prueba prueba
+//Prueba prueba
+
+
 public class Mavenproject2 {
 
     public static void main(String[] args) {
