@@ -12,7 +12,7 @@ import java.util.Stack;
  */
 public class ArbolExpresion implements Metodos {
     
-    private Nodo raiz; // Declara una variable miembro raiz de tipo Nodo, que representa la raíz del árbol.
+    public Nodo raiz; // Declara una variable miembro raiz de tipo Nodo, que representa la raíz del árbol.
 
     public ArbolExpresion() { // Constructor de la clase ArbolExpresion, inicializa raiz como null.
         this.raiz = null;

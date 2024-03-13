@@ -9,6 +9,7 @@ package com.mycompany.mavenproject2;
  * @author ianto
  */
 import java.util.*;
+import javax.swing.*;
 public class Mavenproject2 {
 
     public static void main(String[] args) {
@@ -45,7 +46,9 @@ public class Mavenproject2 {
                       break;
                 case 2:
                     //aca solo generara el arbol grafico
-                    
+                    arbol.construirArbol(expresion); // Construye el árbol de expresión a partir de la expresión dada.
+                    ArbolGraficos.mostrarArbolExpresion(arbol); // Llama al método para mostrar el árbol gráfico
+
                     
                       break;
                 case 3:
@@ -75,6 +78,8 @@ public class Mavenproject2 {
     	System.out.println("\n\t MENU\n");
         System.out.println("1.\t Ingresar expresión matemática");
         System.out.println("2.\t Generar árbol de expresión");
+
+        System.out.println("Se ha generado el árbol de expresión.");
         System.out.println("3.\t Recorridos ");
         System.out.println("4.\t Salir");
         System.out.println("\nSeleccione una opción: ");
@@ -95,6 +100,7 @@ public class Mavenproject2 {
         String variables = expresion.replaceAll("[^a-z]", "");
         return variables.toCharArray();
     }
+
+    }
     
-    
-}
+
