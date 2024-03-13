@@ -5,6 +5,8 @@
 package com.mycompany.mavenproject2;
 
 import java.util.Stack;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *
@@ -131,5 +133,52 @@ public class ArbolExpresion implements Metodos {
                 return 0;
         }
     }
+    
+    
+    
+    public void mostrarArbolEnVentana() {
+        JFrame frame = new JFrame("Árbol de Expresión");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        JPanel panel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                Graphics2D g2d = (Graphics2D) g;
+                dibujarArbol(g2d, getWidth() / 2, 30, raiz);
+            }
+        };
+
+        frame.getContentPane().add(panel);
+        frame.setSize(600, 400);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+
+    private void dibujarArbol(Graphics2D g, int x, int y, Nodo nodo) {
+        if (nodo != null) {
+            int radio = 20;
+
+            // Dibuja el nodo actual
+            g.drawOval(x - radio, y - radio, 2 * radio, 2 * radio);
+            g.drawString(nodo.getValor(), x - 5, y + 5);
+
+            // Dibuja las conexiones con los hijos
+            int distanciaX = 80;
+            int distanciaY = 50;
+
+            if (nodo.getHijoIzquierdo() != null) {
+                g.drawLine(x, y, x - distanciaX, y + distanciaY);
+                dibujarArbol(g, x - distanciaX, y + distanciaY, nodo.getHijoIzquierdo());
+            }
+
+            if (nodo.getHijoDerecho() != null) {
+                g.drawLine(x, y, x + distanciaX, y + distanciaY);
+                dibujarArbol(g, x + distanciaX, y + distanciaY, nodo.getHijoDerecho());
+            }
+        }
+    }
+    
+    
     
 }
